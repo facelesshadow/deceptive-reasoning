@@ -1,8 +1,0 @@
-streamlit
-langchain
-langgraph
-langchain-community
-langchain-core
-langchain-ollama  # if you need ChatOllama
-ollama
-python-dotenv
