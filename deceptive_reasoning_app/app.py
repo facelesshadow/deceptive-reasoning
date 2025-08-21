@@ -5,12 +5,19 @@ import streamlit as st
 
 
 def check_ollama():
-    try:
-        r = requests.get("http://localhost:11434/api/tags", timeout=2)
-        return r.status_code == 200
-    except Exception:
-        return False
-
+    urls = [
+        "http://127.0.0.1:11434/api/tags",
+        "http://localhost:11434/api/tags"
+    ]
+    for url in urls:
+        try:
+            r = requests.get(url, timeout=2)
+            if r.status_code == 200:
+                return True
+        except Exception:
+            continue
+    return False
+    
 
 
 st.title("LangGraph Planner Demo")
