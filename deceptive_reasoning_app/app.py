@@ -3,20 +3,16 @@ from langchain_core.messages import AIMessage
 
 import streamlit as st
 
+OLLAMA_URL = "http://127.0.0.1:11434"
 
 def check_ollama():
-    urls = [
-        "http://127.0.0.1:11434/api/tags",
-        "http://localhost:11434/api/tags"
-    ]
-    for url in urls:
-        try:
-            r = requests.get(url, timeout=2)
-            if r.status_code == 200:
-                return True
-        except Exception:
-            continue
-    return False
+    try:
+        r = requests.get(f"{OLLAMA_URL}/api/tags", timeout=3)
+        st.write("Ollama check response:", r.status_code, r.text[:200])  # debug info
+        return r.status_code == 200
+    except Exception as e:
+        st.write("Error checking Ollama:", e)
+        return False
     
 
 
