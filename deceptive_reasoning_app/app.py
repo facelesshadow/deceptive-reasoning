@@ -3,8 +3,20 @@ from langchain_core.messages import AIMessage
 
 import streamlit as st
 
+
+def check_ollama():
+    try:
+        r = requests.get("http://localhost:11434/api/tags", timeout=2)
+        return r.status_code == 200
+    except Exception:
+        return False
+
+
+
 st.title("LangGraph Planner Demo")
 user_input = st.text_area("Enter your problem:")
+
+
 
 
 
@@ -20,6 +32,15 @@ NODE_LABELS = {
     "refiner": "Refining the approach...",
     "final_answer": "Final Answer"
 }
+
+
+
+if not check_ollama():
+    st.error("Ollama is not running. Please start it with: `ollama serve`")
+else:
+    user_input = st.text_area("Enter your problem:")
+    if st.button("Run"):
+
 
 if st.button("Run"):
     if user_input.strip():
