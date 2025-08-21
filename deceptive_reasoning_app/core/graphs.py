@@ -2,7 +2,7 @@ from langchain_ollama import ChatOllama
 from langchain_core.messages import HumanMessage, SystemMessage, AIMessage
 from langgraph.graph import StateGraph, MessagesState, START, END
 
-model = ChatOllama(model="gemma3:1b", temperature=0)
+model = ChatOllama(model="gemma3:1b", temperature=0, base_url="http://localhost:11434")
 # model.invoke("hey")
 
 class ExtendedState(MessagesState):
