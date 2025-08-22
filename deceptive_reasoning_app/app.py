@@ -5,7 +5,8 @@ from langchain_core.messages import AIMessage
 import streamlit as st
 
 
-st.title("LangGraph Planner Demo")
+st.title("Deceptive Reasoning")
+st.text("A langgraph reasoning alternative for non-reasoning Language models.")
 # user_input = st.text_area("Enter your problem:")
 st.sidebar.title("🔧 Settings")
 provider = st.sidebar.selectbox("Select Provider", ["Gemini", "Groq"])
