@@ -6,7 +6,8 @@ import streamlit as st
 
 
 st.title("Deceptive Reasoning")
-st.text("A langgraph reasoning alternative for non-reasoning Language models.")
+st.text("A Lang-Graph reasoning alternative for non-reasoning Language models, (Thus, Deceptive Reasoning)")
+st.text("SHDW_TEK")
 # user_input = st.text_area("Enter your problem:")
 st.sidebar.title("🔧 Settings")
 provider = st.sidebar.selectbox("Select Provider", ["Gemini", "Groq"])
