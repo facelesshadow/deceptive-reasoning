@@ -1,6 +1,6 @@
 from core.graphs import build_graph
 from langchain_google_genai import ChatGoogleGenerativeAI
-model = ChatGoogleGenerativeAI(model="gemini-2.0-flash-lite", google_api_key="AIzaSyDmQn209pN4AYO5JTyUiwu-j6bukXUS7LY")
+model = ChatGoogleGenerativeAI(model="gemini-2.0-flash-lite", google_api_key="...")
 
 print(model.invoke("HEY"))
 
