@@ -1,27 +1,39 @@
-from core.graphs import graph_final
-import requests
+from core.graphs import build_graph
+from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_groq import ChatGroq
 from langchain_core.messages import AIMessage
-
 import streamlit as st
-
-OLLAMA_URL = "http://127.0.0.1:11434"
-
-def check_ollama():
-    try:
-        r = requests.get(f"{OLLAMA_URL}/api/tags", timeout=3)
-        st.write("Ollama check response:", r.status_code, r.text[:200])  # debug info
-        return r.status_code == 200
-    except Exception as e:
-        st.write("Error checking Ollama:", e)
-        return False
-    
 
 
 st.title("LangGraph Planner Demo")
 # user_input = st.text_area("Enter your problem:")
+st.sidebar.title("🔧 Settings")
+provider = st.sidebar.selectbox("Select Provider", ["Gemini", "Groq"])
 
 
+model = None
+if provider == "Gemini":
+    gemini_api_key = st.sidebar.text_input("Enter Gemini API Key", type="password")
+    if gemini_api_key:
+        model = ChatGoogleGenerativeAI(
+            model="gemini-2.0-flash",
+            api_key=gemini_api_key
+        )
 
+elif provider == "Groq":
+    groq_api_key = st.sidebar.text_input("Enter Groq API Key", type="password")
+    if groq_api_key:
+        model = ChatGroq(
+            model="llama-3.1-8b-instant",
+            api_key=groq_api_key
+        )
+
+if model:
+    st.success(f"{provider} model loaded ✅")
+    graph_final = build_graph(model)   # <-- pass model in
+    # now run the graph with user input...
+else:
+    st.warning("Enter API key to start")
 
 
 # User input
@@ -39,10 +51,7 @@ NODE_LABELS = {
 
 
 
-if not check_ollama():
-    st.error("Ollama is not running. Please start it with: `ollama serve`")
-else:
-    user_input = st.text_area("Enter your problem:")
+user_input = st.text_area("Enter your problem:")
     # if st.button("Run"):
 
 
