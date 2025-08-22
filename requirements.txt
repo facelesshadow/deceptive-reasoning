@@ -6,3 +6,4 @@ langchain-core
 langchain-ollama  # if you need ChatOllama
 ollama
 python-dotenv
+requests
