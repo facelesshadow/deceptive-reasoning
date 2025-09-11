@@ -3,7 +3,7 @@ langchain
 langgraph
 langchain-community
 langchain-core
-langchain-ollama  # if you need ChatOllama
+langchain-ollama 
 ollama
 python-dotenv
 requests
