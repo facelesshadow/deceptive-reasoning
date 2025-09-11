@@ -2,8 +2,9 @@
 
 A reasoning framework for non-reasoning models with langgraph under the hood, to improve the reasoning and problem solving of non-reasoning / thinking models.
 
-![v1_graph](langchain-academy\lab\deceptive-reasoning\resources\Deceptive_reasonin_v2_flow.png)
-![[../resources/Deceptive_reasonin_v2_flow.png | 300]]
+
+![[../resources/Deceptive_reasonin_v2_flow.png]]
+
 ---
 ## Overview
 
