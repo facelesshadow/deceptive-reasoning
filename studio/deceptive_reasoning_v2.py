@@ -90,7 +90,6 @@ def final_solver(state):
     solutions_string = " | ".join([s for s in state['solutions']])
     prompt = """You are a Markdown Writer. Given a problem statement / query / task, and answers seperated by '|'.
     you are to write an answer which contains each of the smaller answers, into one Final Answer.
-    keep the answer under 100 words. 
     Do not add information from your own, only use the information provided in the context. 
     """
     human_prompt = f"""Problem Statement: "{state['messages'][-1].content}"
