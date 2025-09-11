@@ -54,22 +54,8 @@ deceptive-reasoning/
 
 4. Run and interact:
    The flow handles reasoning, HITL prompts, and reduced hallucinations.
-
----
-
-## Screenshots
-
-| v1 (Linear)                       | v2 (Modern Flow)                  |
-| --------------------------------- | --------------------------------- |
-| ![v1 Graph](./screenshots/v1.png) | ![v2 Graph](./screenshots/v2.png) |
-
----
-
-## Tech Stack
-
-* [LangGraph](https://github.com/langchain-ai/langgraph)
-* [LangChain](https://github.com/langchain-ai/langchain)
-* [Ollama](https://ollama.ai)
+5. (Optional) Chat:
+   Switch to chat mode in the studio.
 
 ---
 
@@ -77,6 +63,7 @@ deceptive-reasoning/
 
 * \~70–80 % fewer factual hallucinations (vs baseline Gemma-3)
 * More efficient token usage due to structured state & map-reduce
+* Improved Reasoning and problem solving
 
 ---
 
@@ -89,4 +76,4 @@ Please open an issue or PR for ideas, improvements, or bug reports.
 
 ## License
 
-MIT License. See [LICENSE](./LICENSE) for details.
+MIT License. 
