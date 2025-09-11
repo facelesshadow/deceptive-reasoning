@@ -10,7 +10,7 @@ This repository contains two LangGraph flows designed to improve factual accurac
 
 **Highlights**
 
-* \~70–80 % fewer factual hallucinations in Gemma-3
+* \~70–80 % fewer initial factual hallucinations in models like Gemma-3
 * Map-reduce flow splits problems into smaller parts for better optimization
 * Human-in-the-Loop (HITL): asks the user to restate rather than hallucinate
 * Modern state management, checkpoints and token-efficient prompting
