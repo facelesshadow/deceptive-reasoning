@@ -1,7 +1,8 @@
 {
   "dockerfile_lines": [],
   "graphs": {
-    "deceptive_reasoning":"./deceptive_reasoning_v2.py:graph"
+    "deceptive_reasoning_v2":"./deceptive_reasoning_v2.py:graph",
+    "deceptive_reasoning":"./deceptive_reasoning.py:graph_final"
   },
   "env": "./.env",
   "python_version": "3.15",
