@@ -1,6 +1,6 @@
-# Deceptive Reasoning — Better Thinking for Small LLMs
+# Deceptive Reasoning — Improved Thinking for Non-Reasoning LLMs
 
-A reasoning framework for non-reasoning models with langgraph under the hood, to improve the reasoning and problem solving of non-reasoning / thinking models.
+A reasoning framework for non-reasoning language models with langgraph under the hood, to improve the reasoning and problem solving of non-reasoning / thinking models.
 
 ![v1_graph](resources/Deceptive_reasonin_v2_flow.png)
 ---
